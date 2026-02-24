@@ -1,71 +1,149 @@
-# FamilyCell and Phone - GitHub Pages
+# FamilyCell and Phone - Tienda Online
 
-## Instrucciones de despliegue
+## 🚀 Tu tienda está online!
 
-### Paso 1: Crear repositorio en GitHub
-1. Ve a https://github.com/new
-2. Nombra tu repositorio: `familycell` (o el nombre que prefieras)
-3. Haz clic en "Create repository"
+**URL:** https://ri3luej32hi4c.ok.kimi.link
 
-### Paso 2: Subir archivos
-**Opción A - Por web:**
-1. En tu nuevo repositorio, haz clic en "uploading an existing file"
-2. Arrastra todos los archivos de esta carpeta `dist`
-3. Escribe como mensaje: "Initial commit"
-4. Haz clic en "Commit changes"
+---
 
-**Opción B - Por terminal (si tienes git instalado):**
-```bash
-cd dist
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/TU_USUARIO/familycell.git
-git push -u origin main
+## ✨ Funcionalidades incluidas
+
+### 🛒 Carrito de Compras
+- Agregar/eliminar productos
+- Modificar cantidades
+- Persistencia en LocalStorage (no se pierde al recargar)
+- Indicador de cantidad en el icono
+
+### 📦 Catálogo de Productos
+- **40+ productos** en 7 categorías:
+  - Celulares y accesorios
+  - Computadoras y periféricos
+  - Televisores
+  - Ropa (hombre, mujer, niños)
+  - Hogar y cocina
+  - Gadgets y tecnología
+- Búsqueda en tiempo real
+- Filtros por categoría y precio
+- Ordenamiento por precio, rating, novedades
+
+### 📄 Página de Producto
+- Galería de imágenes
+- Especificaciones técnicas
+- Rating y reseñas
+- Productos relacionados
+- Selector de cantidad
+
+### 💳 Checkout
+- Formulario de datos personales
+- Dirección de envío
+- Métodos de pago:
+  - Efectivo al recibir
+  - Transferencia bancaria
+  - Tarjeta de crédito/débito
+- Resumen del pedido
+- Confirmación de compra
+
+### 📅 Sistema de Reservas (Estética)
+- 8 servicios disponibles:
+  - Manicura básica y semipermanente
+  - Uñas acrílicas
+  - Pedicura
+  - Lifting y extensiones de pestañas
+  - Diseño y laminado de cejas
+- Selector de fecha y hora
+- Formulario de contacto
+- Confirmación de reserva
+
+---
+
+## 📁 Estructura del proyecto
+
+```
+src/
+├── components/
+│   ├── Navigation.tsx      # Barra de navegación
+│   └── CartDrawer.tsx      # Carrito lateral
+├── context/
+│   └── CartContext.tsx     # Estado global del carrito
+├── data/
+│   └── inventory.ts        # Productos y servicios
+├── pages/
+│   ├── HomePage.tsx        # Página principal
+│   ├── CatalogPage.tsx     # Catálogo con filtros
+│   ├── ProductDetailPage.tsx # Detalle de producto
+│   ├── CheckoutPage.tsx    # Finalizar compra
+│   └── ReservasPage.tsx    # Reservas de estética
+├── App.tsx                 # Router principal
+└── main.tsx               # Punto de entrada
 ```
 
-### Paso 3: Activar GitHub Pages
-1. En tu repositorio, ve a **Settings** (pestaña superior)
-2. En el menú lateral izquierdo, haz clic en **Pages**
-3. En "Source" selecciona **Deploy from a branch**
-4. En "Branch" selecciona **main** y carpeta **/(root)**
-5. Haz clic en **Save**
+---
 
-### Paso 4: Esperar y acceder
-- Espera 1-2 minutos
-- Tu web estará en: `https://TU_USUARIO.github.io/familycell/`
-- El enlace aparecerá en la misma página de Settings > Pages
+## 🛠️ Tecnologías usadas
+
+- **React 18** + TypeScript
+- **Vite** (build tool)
+- **Tailwind CSS** (estilos)
+- **React Router** (navegación)
+- **shadcn/ui** (componentes UI)
+- **LocalStorage** (persistencia del carrito)
 
 ---
 
-## ¿Problemas con las imágenes?
+## 📝 Para personalizar
 
-Si las imágenes no cargan, verifica que:
-1. Todas las imágenes `.jpg` estén en la raíz del repositorio
-2. Los nombres coincidan exactamente:
-   - hero_family.jpg
-   - estetica_nails.jpg
-   - estetica_lashes.jpg
-   - ropa_rack.jpg
-   - ropa_accessories.jpg
-   - celular_repair.jpg
-   - celular_accessories.jpg
-   - computo_laptop.jpg
-   - computo_peripherals.jpg
-   - tv_living.jpg
-   - tv_box.jpg
-   - hogar_kitchen.jpg
-   - hogar_cleaning.jpg
-   - gadgets_earbuds.jpg
-   - gadgets_watch.jpg
-   - map_placeholder.jpg
+### Agregar más productos
+Edita el archivo `src/data/inventory.ts` y agrega productos al array `products`:
+
+```typescript
+{
+  id: 'cel-005',
+  name: 'Nombre del producto',
+  description: 'Descripción...',
+  price: 999999,
+  category: 'celulares',
+  image: '/imagen.jpg',
+  stock: 10,
+  rating: 4.5,
+  reviews: 100,
+}
+```
+
+### Cambiar precios
+Busca el producto en `src/data/inventory.ts` y modifica el campo `price`.
+
+### Agregar servicios de estética
+Agrega al array `services` en el mismo archivo.
+
+### Cambiar colores
+Edita las variables CSS en `src/index.css`:
+```css
+--family-red: #D32F2F;
+--family-pink: #F4B6C2;
+--family-cream: #F4F1EC;
+```
 
 ---
 
-## Personalizar dominio (opcional)
+## 📱 Responsive
 
-Si quieres usar tu propio dominio (ej: familycell.com):
-1. Compra el dominio en Namecheap, GoDaddy, etc.
-2. En Settings > Pages, escribe tu dominio en "Custom domain"
-3. Configura los DNS según las instrucciones de GitHub
+La tienda está optimizada para:
+- 💻 Desktop
+- 📱 Mobile
+- 📲 Tablet
+
+---
+
+## 🔮 Próximas mejoras sugeridas
+
+- [ ] Integración con MercadoPago
+- [ ] Base de datos real (Firebase/Supabase)
+- [ ] Panel de administración
+- [ ] Sistema de usuarios/login
+- [ ] Historial de pedidos
+- [ ] Notificaciones por email
+- [ ] Chat en vivo
+
+---
+
+¿Necesitas ayuda para personalizar algo? ¡Estoy aquí para ayudarte! 🚀
